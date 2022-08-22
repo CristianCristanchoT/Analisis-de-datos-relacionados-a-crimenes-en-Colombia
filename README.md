@@ -16,6 +16,10 @@
 
 ### 2. Responda las siguientes preguntas para cada uno de los conjuntos de datos seleccionados:
 
+Debido a la necesidad de generar análisis de frecuencias de variables categoricas, se genera una función que permite recibir el dataframe a analizar y posteriormente obtener los últimos 5 años del dataframe y encontrar los 3 valores con más registros: 
+
+
+
 ##### 2.1. ¿Cuáles han sido los departamentos (TOP 3) más afectados en términos de cantidad de delitos cometidos en los últimos 5 años?
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
