@@ -80,7 +80,23 @@ Para el segundo análisis se genera una normalización correspondiente a la cant
 
 ### 4. A partir de los conjuntos de datos seleccionados, construya un único dataset que integre la totalidad de los delitos ocurridos por departamento y municipio. Muestre los valores normalizados por cantidad de habitantes realizando un proceso similar al del punto anterior. Utilice la proyección para el año en curso. Considere solamente los municipios con más de 1 millón de habitantes.
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Lo primero que se hizo en este punto para dar solución al punto, fue unir todos los dataframe que habiamos seleccionado anteriormente y estandarizar los nombres de los municipios y departamentos para agruparlos por dichas columnas y sumar la cantidad de delitos por fecha.
+
+Posteriormente, se hizo el tratamiento del dataframe de tendencia poblacional del DANE seleccionando los años del 2018-2022 que eran los años en los que había información en los demás dataframe, aquí se filtraron los municipios con más de un millón de habitantes, obteniendo como resultado, Bogotá, Medellín, Cali, Barranquilla y Cartagena, las capitales de sus respectivos departamentos. 
+
+Luego para los municipios filtrados se hizo un merge con entre el dataset que reúne la información de los delitos y el de la proyección de la población.
+
+El resultado de la cantidad de delitos a través del tiempo sin normalizar se evidencia en la siguiente gráfica. 
+
+  ![Test Image 2](/img/4cant1.png)
+
+Con el dataset resultante se normalizó la cantidad de delitos con base en la población para el año en curso, obteniendo la siguiente gráfica: 
+
+  ![Test Image 2](/img/4cant2.png)
+
+En la gráfica anterior se puede evindenciar que los municipios con mayor cantidad de crimenes en relación con su población son Bogotá y Barranquilla, seguidos de Cali y Cartagena y de los Municipios evaluados el que tiene menor indice de criminalidad en los escenarios seleccionados (Violencia inrafamiliar, delitos sexuales, extorción y homicidio) es Medellín. 
+
+Se ve con claridad que durante la pandemia se vio una disminución significativa en la cantidad de crimenes, posiblemente por la cuarentena y todos los municipios muestran una tendencia similar a lo largo del tiempo, como se puedo observar en los puntos anteriores. 
 
 ### 5. Grabe un video de máximo 5 minutos en donde muestre el proceso realizado y los hallazgos más importantes de los diferentes análisis. Suba el video a YouTube. Todos los integrantes del equipo deben participar en el video.
 
