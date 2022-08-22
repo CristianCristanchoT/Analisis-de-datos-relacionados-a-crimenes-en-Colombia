@@ -10,7 +10,135 @@
 ### 1. Seleccione al menos 4 conjuntos de datos y realice un perfilamiento de cada uno. Describa los hallazgos encontrados en cada conjunto de datos. No olvide mencionar su estructura y aspectos relevantes de calidad como campos nulos, departamentos mal escritos, formatos de fechas incorrectos, entre otros. Si no evidencia ningún problema de calidad de datos, también menciónelo.
 
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+Los conjuntos de datos seleccionados para la realización de este taller fueron los siguientes:
+
+- Delitos sexuales
+- Extorsión
+- Homicidios
+- Violencia Intrafamiliar
+
+En general los 4 dataset compartían las siguientes columnas:
+
+| Nombre | Tipo | Descripción |
+| ------ | ------ | ------ |
+| DEPRTAMENTO | object | Muestra el departamento donde ocurrió el evento | 
+| MUNICIPIO | object | Dice el municipio donde ocurrió el hecho | 
+| FECHA HECHO | object | Dice el momento en que ocurrió, esta fecha esta segmentada a nivel de días | 
+| CANTIDAD |  int64 | La cantidad de personas afectadas | 
+
+En el caso de los datos de delitos sexuales los datos cuentan con 260323, además de que las anteriores columnas están complementadas con las siguientes:
+
+| Nombre | Tipo | Descripción |
+| ------ | ------ | ------ |
+| CODIGO DANE | float64 | Es una nomenclatura estandarizada, diseñada por el DANE para la identificación de Entidades Territoriales | 
+| ARMAS MEDIOS | object | Detalle de las armas empleadas en el evento | 
+| GENERO | object | Genero de la victima | 
+| GRUPO ETARIO | object | Grupo de edad a la que pertenece la victima | 
+| delito | object | Descripción del legal del delito |
+
+En el caso de los datos de extorción hay 69137 registros y estos datos estos están complementados con:
+
+| Nombre | Tipo | Descripción |
+| ------ | ------ | ------ |
+| COD_DEPTO | int64 | Código del departamento | 
+| COD_MUNI | int64 | Código del municipio | 
+
+En homicidios los registros encontrados fueron 59810 y las columnas restantes fueron:
+
+| Nombre | Tipo | Descripción |
+| ------ | ------ | ------ |
+| CODIGO DANE | float64 | Es una nomenclatura estandarizada, diseñada por el DANE para la identificación de Entidades Territoriales | 
+| ARMAS MEDIOS | object | Detalle de las armas empleadas en el evento | 
+| GENERO | object | Genero de la victima | 
+| GRUPO ETARIO | object | Grupo de edad a la que pertenece la victima | 
+| DESCRIPCIÓN CONDUCTA | object | Descripción dada por las autoridades del delito |
+
+Y finalmente en violencia intrafamiliar se encontraron 528880 registros en donde las columnas complementarias son:
+
+| Nombre | Tipo | Descripción |
+| ------ | ------ | ------ |
+| CODIGO DANE | float64 | Es una nomenclatura estandarizada, diseñada por el DANE para la identificación de Entidades Territoriales | 
+| ARMAS MEDIOS | object | Detalle de las armas empleadas en el evento | 
+| GENERO | object | Genero de la victima | 
+| GRUPO ETARIO | object | Grupo de edad a la que pertenece la victima | 
+| DESCRIPCIÓN CONDUCTA | object | Descripción dada por las autoridades del delito |
+
+Ya pasando a los temas relacionados con la calidad de los datos se encontró que, en el dataset de delitos sexuales en la columna de MUNICIPIOS, estos presentan una leve diferencia a la nomenclatura manejada en los otros dataset,
+
+| Municipios en el dataset de violencia | Municipios en los otros dataset  |
+| ------ | ------ |
+| CARTAGENA (CT) | CARTAGENA |
+| VILLAVICENCIO (CT) | VILLAVICENCIO |
+| CALI (CT) |CALI |
+| RIOHACHA (CT) | RIOHACHA|
+
+Apaarte del caso anterior no hubo mas diferencias o discondancias entre los datos presentados en los registros.
+
+En el caso de los datos faltantes o NaN se realizado un análisis a todos los dataset y se encontraron los siguientes resultados:
+
+###### Delitos sexuales:
+&NewLine;
+ | Columna | Cantidad de registros nulos |
+ | ------ | ------ |
+| DEPARTAMENTO    |0|
+|MUNICIPIO       |0|
+|CODIGO DANE     |0|
+|ARMAS MEDIOS    |0|
+|FECHA HECHO     |0|
+|GENERO          |0|
+|GRUPO ETARIO    |0|
+|CANTIDAD        |0|
+
+###### Extorcion:
+&NewLine;
+
+ | Columna | Cantidad de registros nulos |
+ | ------ | ------ |
+|FECHA HECHO     |0|
+|COD_DEPTO       |0|
+|DEPARTAMENTO    |0|
+|COD_MUNI        |0|
+|MUNICIPIO       |0|
+|CANTIDAD        |0|
+
+###### Homicidios:
+&NewLine;
+ | Columna | Cantidad de registros nulos |
+ | ------ | ------ |
+|DEPARTAMENTO            |0|
+|MUNICIPIO               |0|
+|CODIGO DANE             |0|
+|ARMAS MEDIOS            |0|
+|FECHA HECHO             |0|
+|GENERO                  |0|
+|GRUPO ETARÍO            |0|
+|DESCRIPCIÓN CONDUCTA    |0|
+|CANTIDAD                |0|
+
+###### Violencia intrafamiliar:
+&NewLine;
+ | Columna | Cantidad de registros nulos |
+ | ------ | ------ |
+ |DEPARTAMENTO      |0|
+|MUNICIPIO          |0|
+|CODIGO DANE        |0|
+|ARMAS MEDIOS       |0|
+|FECHA HECHO        |0|
+|GENERO             |0|
+|GRUPO ETARIO    |1611|
+|CANTIDAD           |0|
+
+En los datos que presentaban algun tipo de problema se procedio a eliminar esos registros empleando el comando de pandas:
+
+```python 
+violencia_intrafamiliar_df = violencia_intrafamiliar_df.dropna()
+```
+Y finalmente se estandarizaron las fechas de los dataset al formato datetime64 empleando el siguiete codigo en todos los datsets:
+
+```python 
+violencia_intrafamiliar_df['FECHA HECHO'] = pd.to_datetime(violencia_intrafamiliar_df['FECHA HECHO'])
+```
 
 
 ### 2. Responda las siguientes preguntas para cada uno de los conjuntos de datos seleccionados:
