@@ -228,7 +228,4 @@ Se ve con claridad que durante la pandemia se vio una disminución significativa
 
 ### 5. Grabe un video de máximo 5 minutos en donde muestre el proceso realizado y los hallazgos más importantes de los diferentes análisis. Suba el video a YouTube. Todos los integrantes del equipo deben participar en el video.
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/mCdA4bJAGGk/0.jpg)](http://www.youtube.com/watch?v=mCdA4bJAGGk "Video de presentacion")
-
-
-
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/XA5RsuITTS4/0.jpg)](http://www.youtube.com/watch?v=XA5RsuITTS4 "Video de presentacion")
