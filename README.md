@@ -216,13 +216,13 @@ Luego para los municipios filtrados se hizo un merge con entre el dataset que re
 
 El resultado de la cantidad de delitos a través del tiempo sin normalizar se evidencia en la siguiente gráfica. 
 
-  ![Test Image 2](/img/4cant1.png)
+  ![Test Image 2](/img/4cant11.png)
 
 Con el dataset resultante se normalizó la cantidad de delitos con base en la población para el año en curso, obteniendo la siguiente gráfica: 
 
-  ![Test Image 2](/img/4cant2.png)
+  ![Test Image 2](/img/4cant21.png)
 
-En la gráfica anterior se puede evindenciar que los municipios con mayor cantidad de crimenes en relación con su población son Bogotá y Barranquilla, seguidos de Cali y Cartagena y de los Municipios evaluados el que tiene menor indice de criminalidad en los escenarios seleccionados (Violencia inrafamiliar, delitos sexuales, extorción y homicidio) es Medellín. 
+En la gráfica anterior se puede evindenciar que los municipios con mayor cantidad de crimenes en relación con su población son Bogotá y Medellín, seguidos de Cali y Cartagena y de los Municipios evaluados el que tiene menor indice de criminalidad en los escenarios seleccionados (Violencia inrafamiliar, delitos sexuales, extorción y homicidio) es Barranquilla. 
 
 Se ve con claridad que durante la pandemia se vio una disminución significativa en la cantidad de crimenes, posiblemente por la cuarentena y todos los municipios muestran una tendencia similar a lo largo del tiempo, como se puedo observar en los puntos anteriores. 
 
